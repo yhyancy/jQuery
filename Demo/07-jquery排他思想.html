@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>
+</head>
+
+<body>
+    <button>收集</button>
+    <button>手机</button>
+    <button>笔记本</button>
+    <script>
+        $(function () {
+            // 隐式迭代，给所有按钮绑定了click事件
+            $("button").click(function () {
+                //当前元素的变化背景颜色
+                // $(this).css("background", "blue")
+                //其余的兄弟去掉背景颜色
+                // $(this).siblings("button").css("background", "")
+                //链式编程 去掉重复的$(this)
+                $(this).css("background", "blue").siblings("button").css("background", "")
+            })
+        })
+    </script>
+</body>
+
+
+</html>

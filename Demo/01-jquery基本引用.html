@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script> -->
+    <script src="./jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // 等着页面的DOM 元素加载完毕再去执行js代码，有两种方法：
+        //1.
+        // $(document).ready(function () {
+        //     $('div').hide()
+        // })
+        //2.
+        $(function () {
+            $('div').hide()
+        })
+    </script>
+    <div></div>
+    <!-- <script>
+        $('div').hide();
+    </script> -->
+</body>
+
+</html>

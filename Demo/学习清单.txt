@@ -1,0 +1,10 @@
+07 - jquer排他思想- 隐式迭代、sbilings()  链式编程
+08 - 08-淘宝服饰精品案例
+           $(this).index() //获取当前元素的索引号
+           $("#content div").eq(index).show()
+           $("#content div").eq(index).siblings().hide()
+           链式编程
+09 - 修改样式操作
+        添加类 $(this).addClass("content")
+        删除类 $(this).removeClass("content")
+        切换类 $(this).toggleClass("content")

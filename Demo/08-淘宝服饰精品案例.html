@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>
+    <style>
+        .ul {
+            list-style: none;
+            float: left;
+        }
+
+        #content {
+            /* align-items: center; */
+            /* float: right; */
+            margin-left: 100px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div>
+        <ul class="ul">
+            <li><a href="#">test1</a></li>
+            <li><a href="#">test2</a></li>
+            <li><a href="#">test3</a></li>
+            <li><a href="#">test4</a></li>
+            <li><a href="#">test5</a></li>
+        </ul>
+        <div id="content">
+            <div>
+                <a href="#"><img src="img/confirm.png" /></a>
+            </div>
+            <div>
+                <a href="#"><img src="img/ibmid.png" /></a>
+            </div>
+            <div>
+                <a href="#"><img src="img/revoke.png" /></a>
+            </div>
+            <div>
+                <a href="#"><img src="img/save.png" /></a>
+            </div>
+            <div>
+                <a href="#"><img src="img/manager user.png" /></a>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $(".ul li").mouseover(function () {
+                var index = $(this).index()
+                console.log(index)
+                // $("#content div").eq(index).show()
+                // $("#content div").eq(index).siblings().hide()
+                $("#content div").eq(index).show().siblings().hide() //链式编程
+
+
+            })
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="grandpa">
+        <div class="father">
+            <div class="son">儿子</div>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            console.log($('.son').parent())
+        })
+    </script> -->
+
+    <div class="nav">
+        <p>我是p</p>
+        <div>
+            <p>我是p</p>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $('.nav').children('p').css('color', 'red')
+            $('.nav').find('p').css('color', 'blue')
+        })
+    </script>
+</body>
+
+</html>
