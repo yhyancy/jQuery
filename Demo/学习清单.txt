@@ -8,3 +8,21 @@
         添加类 $(this).addClass("content")
         删除类 $(this).removeClass("content")
         切换类 $(this).toggleClass("content")
+10 -tab切换案例
+          // 点击上面的li,当前的li添加current类，其余兄弟移除类
+            $(".tab_list li").click(function () {
+            $(this).addClass("current").siblings().removeClass("current")
+            //2.点击的同时获取索引号，得到当前li的索引号
+            var index = $(this).index()
+            //3. 让下面相应索引号的item显示，其余的item 隐藏
+            $(".tab_con .item").eq(index).show().siblings().hide()
+11 - jquery显示与隐藏
+        show hide toogle
+12 - jquery 动画效果
+  slideDown   slideUp
+13 事件切换 slideToggle
+    $(".nav>li").hover(function () {
+                $(this).children("ul").slideToggle()
+            }
+            )
+ <script src="jquery.min.js"></script>
