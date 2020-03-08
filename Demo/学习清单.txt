@@ -26,3 +26,12 @@
             }
             )
  <script src="jquery.min.js"></script>
+   停止动画 stop
+       $(".nav>li").hover(function () {
+                $(this).children("ul").stop().slideToggle()
+            }
+            )
+14. 淡入淡出效果
+        fadeIn fadeOut fadeToggole fadeTo
+15. 自定义动画 animate
+16. 王者荣耀手风琴
