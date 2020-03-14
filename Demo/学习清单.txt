@@ -36,4 +36,7 @@
 15. 自定义动画 animate
 16. 王者荣耀手风琴
 17. 购物车案例: 全选prop change 被选中的长度 :checked
+     val html substr
+18. jquery 内容文本值 html() text() val()
+
 
