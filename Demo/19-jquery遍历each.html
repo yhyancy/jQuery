@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        $(function () {
+            //隐式迭代
+            // $("div").css('color', 'blue')
+
+            //1.遍历each
+            var arr = ['red', 'blue', 'pink']
+            // var sum = 0
+            // $("div").each(function (index, domEle) {
+            //     console.log(index)  //索引号
+            //     console.log(domEle)  //dom 元素对象
+            //     // $(domEle).css('color', 'red')
+            //     $(domEle).css('color', arr[index])
+            //     sum += parseInt($(domEle).text()) //parseInt将字符串转换成int
+            //     console.log(sum)
+
+            // })
+
+            // 2.遍历对象 $each
+            //等价于第一种方式
+            // $.each($("div"), function (i, e) {
+            //     console.log(i)
+            //     console.log(e)
+
+            // })
+
+            // $.each(arr, function (i, e) {
+            //     console.log(i) //索引号
+            //     console.log(e) //属性值
+
+            // })
+
+            $.each({ name: "yh", age: 18 }, function (i, e) {
+                console.log(i) //属性名 name age
+                console.log(e) //属性值  yh 18
+
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>

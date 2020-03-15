@@ -37,6 +37,11 @@
 16. 王者荣耀手风琴
 17. 购物车案例: 全选prop change 被选中的长度 :checked
      val html substr
+     遍历 each （19）
+     删除（20）
 18. jquery 内容文本值 html() text() val()
+19. jquery遍历 each(function(index, domEle){}), $.each(object,function(index, domEle){})
+20. 创建添加删除元素
+
 
 

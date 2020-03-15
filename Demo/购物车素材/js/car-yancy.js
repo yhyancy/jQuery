@@ -5,7 +5,14 @@ $(function () {
     $(".checkall").change(function () {
         console.log($(this).prop("checked"))  //true false
         $(".j-checkbox, .checkall").prop("checked", $(this).prop("checked")) // 设置三个小按钮的值
+        //如果全选添加背景颜色
+        if ($(this).prop("checked")) { $(".cart-item").addClass("check-cart-item") }
+        else {
+            $(".cart-item").removeClass("check-cart-item")
+        }
+
     })
+
     //2. 如果小复选框被选中的个数等于3 就应该把全选按钮选上， 否则全选按钮不选
     $(".j-checkbox").change(function () {
         console.log($(".j-checkbox:checked").length)
@@ -14,6 +21,11 @@ $(function () {
         }
         else {
             $(".checkall").prop("checked", false)
+        }
+        //如果点击复选框，添加背景颜色
+        if ($(this).prop("checked")) { $(this).parents(".cart-item").addClass("check-cart-item") }
+        else {
+            $(this).parents(".cart-item").removeClass("check-cart-item")
         }
     })
 
@@ -32,6 +44,7 @@ $(function () {
         var sum = (p.substr(1) * n).toFixed(2) //sustr 从1开始截取到最后 toFixed(2) 保留两位小数
         // $(this).parent().parent().siblings(".p-sum").html("￥" + sum)
         $(this).parents('.p-num').siblings(".p-sum").html("￥" + sum)
+        getsum()
     })
     // 减少商品数量
     $(".decrement").click(function () {
@@ -54,6 +67,7 @@ $(function () {
         var sum = (p.substr(1) * n).toFixed(2) //sustr 从1开始截取到最后 toFixed(2) 保留两位小数
         // $(this).parent().parent().siblings(".p-sum").html("￥" + sum)
         $(this).parents('.p-num').siblings(".p-sum").html("￥" + sum)
+        getsum()
 
     })
     // 4. 用户修改文本框的值 计算 小计
@@ -67,8 +81,47 @@ $(function () {
         var sum = (p * n).toFixed(2)
         $(this).parents('.p-num').siblings(".p-sum").html("￥" + sum)
 
-
+        getsum();
 
     })
+
+    //5. 计算总额
+    function getsum() {
+        var count = 0 //计算总件数
+        var money = 0 // 计算总价钱
+        $(".itxt").each(function (index, domEle) {
+            console.log('i', index)
+            console.log('d', domEle)
+            count += parseInt($(domEle).val())
+
+        })
+        $('.amount-sum em').text(count)
+
+        $('.p-sum').each(function (index, domEle) {
+            money += parseFloat($(domEle).text().substr(1))
+
+        })
+        $('.price-sum em').text(money)
+    }
+
+    //6. 删除商品
+    $(".p-action a").click(function () {
+        $(this).parents('.cart-item').remove()
+        getsum()
+    })
+    //删除选中商品
+    $(".remove-batch").click(function () {
+        $(".j-checkbox:checked").parents(".cart-item").remove()
+        getsum()
+
+    })
+
+    //清空购物车
+    $(".clear-all").click(function () {
+        $(".j-checkbox").parents(".cart-item").remove()
+        getsum()
+    })
+
+
 
 })

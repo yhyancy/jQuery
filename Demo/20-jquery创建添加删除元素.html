@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>我是原先的小li</li>
+    </ul>
+
+    <div class="text">我是原先的div</div>
+</body>
+<script>
+    $(function () {
+        //创建元素
+        var li = $("<li>我是后来创建的小lia</li>")
+
+        //添加
+        //内部添加
+        // $("ul").append(li)
+        // $("ul").prepend(li)
+        //外部添加
+        // $(".text").after($("<div>我是后创建的div</div>"))
+        // $(".text").before($("<div>我是后创建的div</div>"))
+
+        //删除
+        // $("ul").remove()
+        // $("ul").empty() //清空里面的子节点
+        $("ul").html("") //和上面等价
+
+    })
+</script>
+
+
+</html>
