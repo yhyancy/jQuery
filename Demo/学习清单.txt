@@ -43,6 +43,7 @@
 19. jquery遍历 each(function(index, domEle){}), $.each(object,function(index, domEle){})
 20. 创建添加删除元素
 21. jquery 位置： offset scrollTop $(window).scroll
+22.电梯导航：互斥锁 节流阀 scrollTop each addClass removeClass
 
 
 
