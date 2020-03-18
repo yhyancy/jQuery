@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            background-color: pink;
+            width: 200px;
+            height: 200px;
+        }
+
+        .current {
+            background-color: royalblue;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div></div>
+    <ul>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+    </ul>
+    <ol></ol>
+    <script>
+        $(function () {
+            //1.事件注册
+            // $("div").click(function () {
+            //     $(this).css('background', 'purple')
+            // })
+            // $("div").mouseenter(function () {
+            //     $(this).css('background', 'yellow')
+            // })
+
+            //2.事件处理-绑定
+            //（1）绑定多个事件
+            // $("div").on({
+            //     click: function () {
+            //         $(this).css('background', 'purple')
+            //     },
+            //     mouseenter: function () {
+            //         $(this).css('background', 'yellow')
+            //     }
+            // })
+            //  （2）处理程序相同
+            // $("div").on("mouseenter mouseleave", function () {
+            //     $(this).toggleClass("current")
+            // })
+
+            //3. 事件委派
+            // $("ul").on("click", "li", function () {
+            //     alert('11')
+            // })
+
+            //4.动态绑定事件
+            //(1)不好用，因为在点击事件之前还没有 小li
+            // $("ol li").click(function () {
+            //     alert('test')
+            // })
+            //(2) on可以给未来动态创建的元素绑定事件
+            $("ol").on("click", "li", function () {
+                alert("test")
+            })
+            var li = $("<li>我是后来创建的小li</li>")
+            $("ol").append(li)
+        })
+    </script>
+
+</body>
+
+</html>
