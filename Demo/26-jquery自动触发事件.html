@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <input type="text">
+    <script>
+        $(function () {
+            $("div").on('click', function () {
+                alert('我是click事件')
+            })
+            //1.element.事件()
+            // $("div").click()
+            //2.element.trigger("事件")
+            // $('div').trigger('click')
+            //3.element.triggerHandler('事件')
+            // $("div").triggerHandler('click')
+
+            $("input").on('focus', function () {
+                $(this).val('请输入')
+            })
+
+            $("input").focus()//获取焦点，function执行了
+            // $("input").trigger('focus') //获取焦点，function执行了
+            // $('input').triggerHandler('focus') //没有焦点，但是function执行了
+        })
+    </script>
+</body>
+
+</html>

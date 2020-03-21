@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+
+    <script>
+        $(function () {
+            // 1.浅拷贝,把原来对象里面的复杂数据类型地址拷贝给目标对象,如果有冲突会覆盖,如果没有冲突会合并，复杂数据类型的值 ,会被改变
+            // var targetObj = { id: 02, name: 'frank' }
+            // var obj = { id: 01, name: 'yancy', msg: { txt: '你好' } }
+            var targetObj = { id: 02, name: 'frank', msg: { txt: 'targetObj' } }
+            var obj = { id: 01, name: 'yancy', msg: { txt: 'obj' } }
+
+            $.extend(targetObj, obj)
+            targetObj.id = 00 //不会改变obj的值
+            targetObj.msg.txt = '改变' //targetObj和obj里 msg的值都会改变
+            console.log('targetObj', targetObj)
+            console.log('obj', obj)
+
+            // 2.深拷贝: 把里面的数据完全复制一份给目标对象，如果里面有不冲突的属性，会合并到一起
+            // var targetObj = { id: 02, name: 'frank', msg: { txt: '你好' } }
+            // var obj = { id: 01, name: 'yancy' }
+            // $.extend(true, targetObj, obj)
+            // targetObj.name = 'test'
+            // obj.id = 03
+            // console.log('targetObj', targetObj)
+            // console.log('obj', obj)
+
+
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+    <ul>
+        <li>我是好孩子</li>
+        <li>我是好孩子</li>
+        <li>我是好孩子</li>
+        <li>我是好孩子</li>
+        <li>我是好孩子</li>
+    </ul>
+    <p>我是P标签</p>
+    <script>
+        $(function () {
+            //事件绑定
+            $("div").on({
+                click: function () { $(this).css('background', 'yellow') },
+                mouseenter: function () { $(this).css('background', 'purple') }
+            })
+            // 事件委派
+            // $("ul").on('click', "li", function () {
+            //     alert('我是小li')
+            // })
+            //事件解绑
+            // $("div").off() // 解绑div 标签所有事件
+            // $("div").off('click') //解绑div标签得click事件
+            // $("ul").off('click', 'li') //解绑 委派事件
+
+            $("p").one('click', function () {
+                alert('点击事件只触发一次')
+            })
+
+            $("ul").one('click', 'li', function () {
+                alert('事件委派只触发一次')
+            })
+
+
+        })
+
+    </script>
+
+</body>
+
+</html>

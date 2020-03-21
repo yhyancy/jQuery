@@ -44,6 +44,12 @@
 20. 创建添加删除元素
 21. jquery 位置： offset scrollTop $(window).scroll
 22.电梯导航：互斥锁 节流阀 scrollTop each addClass removeClass
+23. 事件绑定 on
+24. 事件绑定案例 微博发布
+25.事件解绑 off
+26. 自动触发事件 trigger triggerHandler
+27. 复制事件对象 浅拷贝 深拷贝
+
 
 
 
