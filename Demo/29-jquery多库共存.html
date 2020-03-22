@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div> </div>
+    <script>
+        $(function () {
+            function $(ele) {
+                console.log(document.querySelector(ele))
+            }
+            $("div")
+
+            //1. $符号冲突  $.each is not a function
+            // $.each()
+
+            //2. 解决 $符号冲突问题， 使用jquery
+            // jQuery.each()
+
+            //3. 多库共存 jquery
+            var i = jQuery.noConflict() //让jquery释放对$的控制权
+            // var i = $.noConflict() //不好用，因为 第16行已经用$定义function了，所以要使用jquery释放
+            console.log(i("div"))
+            i.each()
+
+
+        })
+    </script>
+</body>
+
+</html>
